@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar" widht="100%">
+    <nav className="navbar" style={{ width: "100%" }}>
       <div className="navbar-logo">
         <Link to="/">jeevanai</Link>
       </div>
@@ -23,6 +23,8 @@ const Navbar = () => {
           <Link to="/quiz">Quiz</Link>
         </li>
       </ul>
+      
+      
     </nav>
   );
 };
