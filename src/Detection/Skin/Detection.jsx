@@ -3,7 +3,7 @@ import * as tmImage from "@teachablemachine/image";
 import Webcam from "react-webcam";
 import LabelDisplay from "./LabelDisplay";
 
-const Detection = () => {
+const SkinDetection = () => {
   const [isLiveFeed, setIsLiveFeed] = useState(true);
   const [model, setModel] = useState(null);
   const [predictions, setPredictions] = useState([]);
@@ -120,4 +120,4 @@ const Detection = () => {
   );
 };
 
-export default Detection;
+export default SkinDetection;
