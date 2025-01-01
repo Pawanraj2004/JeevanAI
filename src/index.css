@@ -185,3 +185,57 @@ footer {
     padding: 1rem;
   }
 }
+/* General Styling Updates */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #004d40;
+  font-weight: bold;
+}
+
+/* Navbar Adjustments */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d40;
+  padding: 15px 20px;
+}
+
+.navbar-logo {
+  font-size: 1.8em;
+  color: white;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-left: 15px;
+}
+
+.navbar-links a:hover {
+  color: #80cbc4;
+}
+
+/* Buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+

@@ -4,104 +4,90 @@ import DiagnosisResult from './DiagnosisResult';
 
 const DiagnosisForm = () => {
     const [symptoms, setSymptoms] = useState([]);
-    const [result, setResult] = useState(null);
-    const [temp, setTemp] = useState('');
+    const [results, setResults] = useState([]);
 
     const addSymptom = (e) => {
         if (e.key === 'Enter' && e.target.value.trim() !== '') {
-            setSymptoms([...symptoms, e.target.value.trim()]);
+            e.preventDefault(); // Prevent form submission
+            const newSymptom = e.target.value.trim();
+            if (!symptoms.includes(newSymptom)) {
+                setSymptoms([...symptoms, newSymptom]);
+            }
             e.target.value = '';
         }
+    };
+
+    const removeSymptom = (symptomToRemove) => {
+        setSymptoms(symptoms.filter((symptom) => symptom !== symptomToRemove));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let diagnosis = 'No matching disease found';
-        let treatment = '';
-        let medicines = '';
-        let guidance = '';
+        const matches = symptomData.filter((data) =>
+            symptoms.some((symptom) =>
+                data.symptoms.map((s) => s.toLowerCase()).includes(symptom.toLowerCase())
+            )
+        );
 
-        for (const data of symptomData) {
-            const matchingSymptoms = data.symptoms.map((s) => s.toLowerCase());
-            if (symptoms.every((symptom) => matchingSymptoms.includes(symptom.toLowerCase()))) {
-                diagnosis = data.disease;
-                treatment = data.treatment;
-                medicines = data.medicines.join(', ');
-                guidance = data.guidance;
-                break;
-            }
-        }
-
-        setResult({ diagnosis, treatment, medicines, guidance });
+        setResults(matches.length > 0 ? matches : [{ disease: 'No matching disease found' }]);
     };
 
     return (
-        <div className="bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto">
-            <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                Medical Diagnosis Form
-            </h1>
+        <div className="flex justify-center items-center h-screen bg-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full">
+                <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
+                    Medical Diagnosis Form
+                </h1>
 
-            <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                    <label className="block text-gray-700">Temperature:</label>
-                    <div className="flex space-x-2 mt-2">
-                        <button
-                            type="button"
-                            data-value="Low"
-                            className={`btn-option ${temp === 'Low' ? 'active' : ''}`}
-                            onClick={() => setTemp('Low')}
-                        >
-                            Low
-                        </button>
-                        <button
-                            type="button"
-                            data-value="Medium"
-                            className={`btn-option ${temp === 'Medium' ? 'active' : ''}`}
-                            onClick={() => setTemp('Medium')}
-                        >
-                            Medium
-                        </button>
-                        <button
-                            type="button"
-                            data-value="High"
-                            className={`btn-option ${temp === 'High' ? 'active' : ''}`}
-                            onClick={() => setTemp('High')}
-                        >
-                            High
-                        </button>
+                <form onSubmit={handleSubmit} className="text-center">
+                    <div className="mb-4">
+                        <label className="block text-gray-700 mb-2 text-lg font-medium">Symptoms:</label>
+                        <input
+                            type="text"
+                            className="w-full mt-2 p-3 border rounded-lg text-lg"
+                            placeholder="Type a symptom and press Enter"
+                            onKeyPress={addSymptom}
+                        />
+                        <div className="flex flex-wrap mt-4 justify-center">
+                            {symptoms.map((symptom, index) => (
+                                <span
+                                    key={index}
+                                    className="bg-green-500 text-white py-2 px-4 rounded-full text-sm font-medium mr-2 mb-2 cursor-pointer"
+                                    onClick={() => removeSymptom(symptom)}
+                                    title="Click to remove this symptom"
+                                >
+                                    {symptom} &times;
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                <div className="mb-4">
-                    <label className="block text-gray-700">Symptoms:</label>
-                    <input
-                        type="text"
-                        className="w-full mt-2 p-2 border rounded"
-                        placeholder="Type a symptom and press Enter"
-                        onKeyPress={addSymptom}
-                    />
-                    <div className="flex flex-wrap mt-2">
-                        {symptoms.map((symptom, index) => (
-                            <span
+                    <button
+                        type="submit"
+                        className="bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-blue-700"
+                    >
+                        Diagnose
+                    </button>
+                </form>
+
+                {results.length > 0 && (
+                    <div className="mt-6 p-6 bg-gray-50 rounded-xl shadow-md">
+                        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
+                            Diagnosis Results
+                        </h2>
+                        {results.map((result, index) => (
+                            <DiagnosisResult
                                 key={index}
-                                className="symptom-tag"
-                            >
-                                {symptom}
-                            </span>
+                                diagnosis={result.disease}
+                                treatment={result.treatment}
+                                medicines={result.medicines?.join(', ')}
+                                guidance={result.guidance}
+                            />
                         ))}
                     </div>
-                </div>
-
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-                >
-                    Diagnose
-                </button>
-            </form>
-
-            {result && <DiagnosisResult {...result} />}
+                )}
+            </div>
         </div>
     );
 };

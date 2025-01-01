@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Symptom Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .diagram-container {
+      position: relative;
+      display: inline-block;
+      margin: 20px auto;
+    }
+
+    #info {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 400px;
+      display: none;
+      background: #f9f9f9;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    #info h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    #info p {
+      margin: 10px 0 0;
+      font-size: 1em;
+      color: #666;
+    }
+
+    .body-svg {
+      width: 300px;
+      height: auto;
+    }
+
+    .body-part {
+      cursor: pointer;
+      fill: transparent;
+      stroke: red;
+      stroke-width: 2;
+      transition: fill 0.3s ease;
+    }
+
+    .body-part:hover {
+      fill: rgba(255, 0, 0, 0.2);
+    }
+
+    .body-part.active {
+      fill: rgba(255, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Symptom Checker</h1>
+  <div class="diagram-container">
+    <!-- SVG Human Body -->
+    <svg class="body-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+      <rect class="body-part" x="90" y="10" width="20" height="40" id="head"></rect>
+      <rect class="body-part" x="80" y="50" width="40" height="100" id="torso"></rect>
+      <rect class="body-part" x="70" y="150" width="20" height="50" id="left-arm"></rect>
+      <rect class="body-part" x="110" y="150" width="20" height="50" id="right-arm"></rect>
+      <rect class="body-part" x="85" y="200" width="15" height="100" id="left-leg"></rect>
+      <rect class="body-part" x="100" y="200" width="15" height="100" id="right-leg"></rect>
+    </svg>
+  </div>
+  <div id="info">
+    <h3 id="part-title">Body Part</h3>
+    <p id="part-info">Information about this body part.</p>
+  </div>
+
+  <script>
+    const partsInfo = {
+      head: {
+        title: "Head",
+        info: "Common symptoms: headache, dizziness, or sinus pain."
+      },
+      torso: {
+        title: "Torso",
+        info: "Common symptoms: chest pain, shortness of breath, or abdominal pain."
+      },
+      "left-arm": {
+        title: "Left Arm",
+        info: "Common symptoms: muscle strain or numbness."
+      },
+      "right-arm": {
+        title: "Right Arm",
+        info: "Common symptoms: muscle strain or numbness."
+      },
+      "left-leg": {
+        title: "Left Leg",
+        info: "Common symptoms: cramping or swelling."
+      },
+      "right-leg": {
+        title: "Right Leg",
+        info: "Common symptoms: cramping or swelling."
+      }
+    };
+
+    document.querySelectorAll('.body-part').forEach(part => {
+      part.addEventListener('click', (e) => {
+        const id = e.target.id;
+        const infoDiv = document.getElementById('info');
+        document.getElementById('part-title').innerText = partsInfo[id].title;
+        document.getElementById('part-info').innerText = partsInfo[id].info;
+        infoDiv.style.display = 'block';
+
+        document.querySelectorAll('.body-part').forEach(p => p.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

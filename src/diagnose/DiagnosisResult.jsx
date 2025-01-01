@@ -8,6 +8,7 @@ const DiagnosisResult = ({ diagnosis, treatment, medicines, guidance }) => {
                 border: '1px solid #ddd',
                 borderRadius: '8px',
                 padding: '16px',
+                marginBottom: '16px',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
             }}
         >
@@ -30,7 +31,6 @@ const DiagnosisResult = ({ diagnosis, treatment, medicines, guidance }) => {
     );
 };
 
-// Define propTypes
 DiagnosisResult.propTypes = {
     diagnosis: PropTypes.string,
     treatment: PropTypes.string,
@@ -38,7 +38,6 @@ DiagnosisResult.propTypes = {
     guidance: PropTypes.string,
 };
 
-// Define defaultProps (Optional)
 DiagnosisResult.defaultProps = {
     diagnosis: 'Unknown',
     treatment: 'N/A',

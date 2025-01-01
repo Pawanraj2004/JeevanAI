@@ -1,7 +1,37 @@
 const Home = () => {
   return (
-    <div>
-      <p>This is the home page.</p>
+    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', textAlign: 'center' }}>
+      <header style={{ marginBottom: '40px' }}>
+        <h1 style={{ fontSize: '2.5em', color: '#004d40' }}>Welcome to SkinHealth AI</h1>
+        <p style={{ fontSize: '1.2em', color: '#555' }}>
+          Your trusted companion for skin disease detection and diagnosis based on symptoms.
+        </p>
+      </header>
+
+      <section style={{ marginBottom: '30px' }}>
+        <h2 style={{ fontSize: '2em', color: '#004d40', marginBottom: '20px' }}>Features</h2>
+        <ul style={{ listStyleType: 'none', padding: '0', color: '#333', fontSize: '1.1em' }}>
+          <li style={{ marginBottom: '10px' }}>
+            <strong>Detection of Skin Diseases:</strong> Upload images to receive insights and possible conditions.
+          </li>
+          <li style={{ marginBottom: '10px' }}>
+            <strong>Diagnosis Based on Symptoms:</strong> Enter symptoms to get a tailored diagnosis.
+          </li>
+        </ul>
+      </section>
+
+      <section style={{ backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+        <h2 style={{ fontSize: '2em', color: '#004d40', marginBottom: '20px' }}>About Us</h2>
+        <p style={{ fontSize: '1.1em', color: '#555', lineHeight: '1.6' }}>
+          At SkinHealth AI, we leverage advanced artificial intelligence technology to provide accurate and reliable 
+          skin disease detection and symptom-based diagnosis. Our mission is to empower individuals with 
+          accessible tools for early detection and proactive healthcare.
+        </p>
+      </section>
+
+      <footer style={{ marginTop: '40px', color: '#fff', backgroundColor: '#004d40', padding: '10px 0' }}>
+        <p>&copy; 2025 Jeevan AI. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
