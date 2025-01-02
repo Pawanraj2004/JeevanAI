@@ -108,7 +108,7 @@ JeevanAI demonstrates the potential of AI and ML in revolutionizing healthcare. 
 5. Access the application at `http://localhost:3000` in your browser.
 
 ## 🌐 Deployment
-The application is deployed on Vercel and can be accessed [here](https://www.jeevanai.vercel.app).
+The application is deployed on Vercel and can be accessed [here](https://jeevanai.vercel.app/).
 
 ---
 
