@@ -9,16 +9,6 @@ Chart.register(ArcElement);
 
 const healthcareQuestions = [
     {
-      title: "Identify this medical equipment.",
-      options: [
-        "Stethoscope",
-        "Thermometer",
-        "Syringe",
-        "Blood Pressure Monitor",
-      ],
-      correctOption: 0,
-    },
-    {
       title: "Which of these is used for imaging internal body structures?",
       options: [
         "MRI Scanner",

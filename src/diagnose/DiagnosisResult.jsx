@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const DiagnosisResult = ({ diagnosis, treatment, medicines, guidance }) => {
+const DiagnosisResult = ({ diagnosis,otherSymptoms, treatment, medicines, guidance }) => {
     return (
         <div
             style={{
@@ -19,6 +19,9 @@ const DiagnosisResult = ({ diagnosis, treatment, medicines, guidance }) => {
                 <strong>Disease:</strong> {diagnosis || 'N/A'}
             </p>
             <p style={{ color: '#555', fontFamily: 'Arial, sans-serif', fontSize: '16px', margin: '8px 0' }}>
+                <strong>Other Symptoms:</strong> {otherSymptoms || 'N/A'}
+            </p>
+            <p style={{ color: '#555', fontFamily: 'Arial, sans-serif', fontSize: '16px', margin: '8px 0' }}>
                 <strong>Treatment:</strong> {treatment || 'N/A'}
             </p>
             <p style={{ color: '#555', fontFamily: 'Arial, sans-serif', fontSize: '16px', margin: '8px 0' }}>
@@ -33,6 +36,7 @@ const DiagnosisResult = ({ diagnosis, treatment, medicines, guidance }) => {
 
 DiagnosisResult.propTypes = {
     diagnosis: PropTypes.string,
+    otherSymptoms: PropTypes.string,
     treatment: PropTypes.string,
     medicines: PropTypes.string,
     guidance: PropTypes.string,
@@ -40,6 +44,7 @@ DiagnosisResult.propTypes = {
 
 DiagnosisResult.defaultProps = {
     diagnosis: 'Unknown',
+    otherSymptoms: 'Unknown',
     treatment: 'N/A',
     medicines: 'N/A',
     guidance: 'N/A',

@@ -3,6 +3,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   margin: 0;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
 }
 
@@ -171,7 +173,7 @@ strong {
 .diagnosis-form {
   text-align: center;
   padding: 20px;
-  max-width: 600px;
+  min-width: 100vw;
   margin: 50px auto;
   background-color: #ffffff;
   border-radius: 10px;

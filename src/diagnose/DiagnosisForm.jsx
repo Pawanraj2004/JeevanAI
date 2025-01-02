@@ -34,8 +34,8 @@ const DiagnosisForm = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full">
+        <div className="flex justify-center items-center h-screen bg-gray-100 w-full">
+            <div className="bg-white p-8 rounded-xl shadow-lg w-full">
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Medical Diagnosis Form
                 </h1>
@@ -45,7 +45,7 @@ const DiagnosisForm = () => {
                         <label className="block text-gray-700 mb-2 text-lg font-medium">Symptoms:</label>
                         <input
                             type="text"
-                            className="w-full mt-2 p-3 border rounded-lg text-lg"
+                            className="w-full mt-2 p-3 h-full border rounded-lg text-lg"
                             placeholder="Type a symptom and press Enter"
                             onKeyPress={addSymptom}
                         />
@@ -80,6 +80,7 @@ const DiagnosisForm = () => {
                             <DiagnosisResult
                                 key={index}
                                 diagnosis={result.disease}
+                                otherSymptoms={result.otherSymptoms}
                                 treatment={result.treatment}
                                 medicines={result.medicines?.join(', ')}
                                 guidance={result.guidance}

@@ -1,6 +1,7 @@
 const symptomData = [
     {
         symptoms: ['Fever', 'Cough', 'Fatigue', 'Headache'],
+        otherSymptoms: "Fever, Cough, Fatigue, Headache",
         disease: 'Common Cold',
         treatment: 'Rest, hydration, and over-the-counter cold medications',
         medicines: ['Paracetamol', 'Ibuprofen'],
@@ -8,6 +9,7 @@ const symptomData = [
     },
     {
         symptoms: ['High Fever', 'Severe Headache', 'Stiff Neck'],
+        otherSymptoms: "High Fever, Severe Headache, Stiff Neck",
         disease: 'Meningitis',
         treatment: 'Immediate hospital treatment with antibiotics or antiviral medications',
         medicines: ['Ceftriaxone', 'Vancomycin'],
@@ -15,6 +17,7 @@ const symptomData = [
     },
     {
         symptoms: ['Cough', 'Shortness of Breath', 'Fatigue'],
+        otherSymptoms: "Cough, Shortness of Breath, Fatigue",
         disease: 'Pneumonia',
         treatment: 'Antibiotics, rest, and fluids',
         medicines: ['Amoxicillin', 'Azithromycin'],
@@ -22,6 +25,7 @@ const symptomData = [
     },
     {
         symptoms: ['Sore Throat', 'Fever', 'Swollen Lymph Nodes'],
+        otherSymptoms: "Sore Throat, Fever, Swollen Lymph Nodes",
         disease: 'Strep Throat',
         treatment: 'Antibiotics like Penicillin',
         medicines: ['Penicillin', 'Amoxicillin'],
@@ -29,6 +33,7 @@ const symptomData = [
     },
     {
         symptoms: ['Nausea', 'Vomiting', 'Stomach Pain'],
+        otherSymptoms: "Nausea, Vomiting, Stomach Pain",
         disease: 'Gastroenteritis',
         treatment: 'Hydration and over-the-counter medications for nausea',
         medicines: ['Ondansetron', 'Loperamide'],
@@ -36,6 +41,7 @@ const symptomData = [
     },
     {
         symptoms: ['Fatigue', 'Weight Gain', 'Cold Sensitivity'],
+        otherSymptoms: "Fatigue, Weight Gain, Cold Sensitivity",
         disease: 'Hypothyroidism',
         treatment: 'Thyroid hormone replacement therapy',
         medicines: ['Levothyroxine'],
@@ -43,6 +49,7 @@ const symptomData = [
     },
     {
         symptoms: ['Chronic Cough', 'Wheezing', 'Shortness of Breath'],
+        otherSymptoms: "Chronic Cough, Wheezing, Shortness of Breath",
         disease: 'Asthma',
         treatment: 'Inhalers, corticosteroids, and avoiding triggers',
         medicines: ['Albuterol', 'Fluticasone'],
@@ -50,6 +57,7 @@ const symptomData = [
     },
     {
         symptoms: ['Persistent High Fever', 'Night Sweats', 'Fatigue'],
+        otherSymptoms: "Persistent High Fever, Night Sweats, Fatigue",
         disease: 'Tuberculosis',
         treatment: 'Antibiotics for at least 6 months',
         medicines: ['Isoniazid', 'Rifampin'],
@@ -57,6 +65,7 @@ const symptomData = [
     },
     {
         symptoms: ['Painful Urination', 'Frequent Urination', 'Lower Abdominal Pain'],
+        otherSymptoms: "Painful Urination, Frequent Urination, Lower Abdominal Pain",
         disease: 'Urinary Tract Infection (UTI)',
         treatment: 'Antibiotics and plenty of fluids',
         medicines: ['Ciprofloxacin', 'Nitrofurantoin'],
@@ -64,6 +73,7 @@ const symptomData = [
     },
     {
         symptoms: ['Joint Pain', 'Fatigue', 'Skin Rashes'],
+        otherSymptoms: "Joint Pain, Fatigue, Skin Rashes",
         disease: 'Rheumatoid Arthritis',
         treatment: 'Disease-modifying antirheumatic drugs (DMARDs)',
         medicines: ['Methotrexate', 'Hydroxychloroquine'],
@@ -71,6 +81,7 @@ const symptomData = [
     },
     {
         symptoms: ['Chest Pain', 'Shortness of Breath', 'Fatigue'],
+        otherSymptoms: "Chest Pain, Shortness of Breath, Fatigue",
         disease: 'Heart Attack',
         treatment: 'Immediate emergency treatment, including surgery if needed',
         medicines: ['Aspirin', 'Clopidogrel'],
@@ -78,6 +89,7 @@ const symptomData = [
     },
     {
         symptoms: ['Abdominal Pain', 'Jaundice', 'Dark Urine'],
+        otherSymptoms: "Abdominal Pain, Jaundice, Dark Urine",
         disease: 'Hepatitis',
         treatment: 'Antiviral medications, avoid alcohol',
         medicines: ['Entecavir', 'Tenofovir'],
@@ -85,6 +97,7 @@ const symptomData = [
     },
     {
         symptoms: ['Severe Back Pain', 'Numbness', 'Weakness in Legs'],
+        otherSymptoms: "Severe Back Pain, Numbness, Weakness in Legs",
         disease: 'Spinal Cord Injury',
         treatment: 'Emergency care, surgical intervention if needed',
         medicines: ['Pain relievers', 'Steroids'],
@@ -92,6 +105,7 @@ const symptomData = [
     },
     {
         symptoms: ['Severe Thirst', 'Frequent Urination', 'Fatigue'],
+        otherSymptoms: "Severe Thirst, Frequent Urination, Fatigue",
         disease: 'Diabetes Mellitus',
         treatment: 'Blood sugar management through medication and diet',
         medicines: ['Metformin', 'Insulin'],
@@ -99,6 +113,7 @@ const symptomData = [
     },
     {
         symptoms: ['Sudden Loss of Vision', 'Pain around the Eye'],
+        otherSymptoms: "Sudden Loss of Vision, Pain around the Eye",
         disease: 'Glaucoma',
         treatment: 'Eye drops to lower intraocular pressure, surgery if necessary',
         medicines: ['Timolol', 'Latanoprost'],
@@ -108,6 +123,7 @@ const symptomData = [
     // Additional 15 entries
     {
         symptoms: ['Severe Headache', 'Neck Stiffness', 'Sensitivity to Light'],
+        otherSymptoms: "Severe Headache, Neck Stiffness, Sensitivity to Light",
         disease: 'Migraine',
         treatment: 'Pain relievers, rest in a dark room, and hydration',
         medicines: ['Sumatriptan', 'Ibuprofen'],
@@ -115,6 +131,7 @@ const symptomData = [
     },
     {
         symptoms: ['Red, Itchy Eyes', 'Excessive Tearing', 'Blurry Vision'],
+        otherSymptoms: "Red, Itchy Eyes, Excessive Tearing, Blurry Vision",
         disease: 'Conjunctivitis (Pink Eye)',
         treatment: 'Antibiotic eye drops or antihistamine',
         medicines: ['Chloramphenicol', 'Olopatadine'],
@@ -122,6 +139,7 @@ const symptomData = [
     },
     {
         symptoms: ['Sudden Weight Loss', 'Excessive Thirst', 'Frequent Urination'],
+        otherSymptoms: "Sudden Weight Loss, Excessive Thirst, Frequent Urination",
         disease: 'Diabetes Insipidus',
         treatment: 'Desmopressin, hydration therapy',
         medicines: ['Desmopressin'],
@@ -129,6 +147,7 @@ const symptomData = [
     },
     {
         symptoms: ['Painful Swallowing', 'Sore Throat', 'Hoarseness'],
+        otherSymptoms: "Painful Swallowing, Sore Throat, Hoarseness",
         disease: 'Laryngitis',
         treatment: 'Resting the voice, hydration, and throat lozenges',
         medicines: ['Hydrocodone', 'Dexamethasone'],
@@ -136,6 +155,7 @@ const symptomData = [
     },
     {
         symptoms: ['Dry Skin', 'Flaky Scalp', 'Hair Loss'],
+        otherSymptoms: "Dry Skin, Flaky Scalp, Hair Loss",
         disease: 'Psoriasis',
         treatment: 'Topical creams, UV therapy, and oral medications',
         medicines: ['Hydrocortisone', 'Methotrexate'],
@@ -143,6 +163,7 @@ const symptomData = [
     },
     {
         symptoms: ['Sore Muscles', 'Fever', 'Headache'],
+        otherSymptoms: "Sore Muscles, Fever, Headache",
         disease: 'Influenza (Flu)',
         treatment: 'Rest, hydration, and antiviral medications',
         medicines: ['Oseltamivir', 'Paracetamol'],
@@ -150,6 +171,7 @@ const symptomData = [
     },
     {
         symptoms: ['Dark, Urine', 'Fatigue', 'Loss of Appetite'],
+        otherSymptoms: "Dark Urine, Fatigue, Loss of Appetite",
         disease: 'Liver Disease',
         treatment: 'Liver function support and medications',
         medicines: ['Lactulose', 'Sodium Bicarbonate'],
@@ -157,6 +179,7 @@ const symptomData = [
     },
     {
         symptoms: ['Nausea', 'Shortness of Breath', 'Coughing up Blood'],
+        otherSymptoms: "Nausea, Shortness of Breath, Coughing up Blood",
         disease: 'Pulmonary Embolism',
         treatment: 'Emergency medical care, anticoagulant therapy',
         medicines: ['Heparin', 'Warfarin'],
@@ -164,6 +187,7 @@ const symptomData = [
     },
     {
         symptoms: ['Dry Cough', 'Fatigue', 'Weight Loss'],
+        otherSymptoms: "Dry Cough, Fatigue, Weight Loss",
         disease: 'Chronic Obstructive Pulmonary Disease (COPD)',
         treatment: 'Bronchodilators, steroids, and pulmonary rehabilitation',
         medicines: ['Salbutamol', 'Prednisone'],
@@ -171,6 +195,7 @@ const symptomData = [
     },
     {
         symptoms: ['Fatigue', 'Headache', 'Dizziness'],
+        otherSymptoms: "Fatigue, Headache, Dizziness",
         disease: 'Anemia',
         treatment: 'Iron supplements, balanced diet',
         medicines: ['Ferrous Sulfate', 'Folic Acid'],
@@ -178,6 +203,7 @@ const symptomData = [
     },
     {
         symptoms: ['Red Skin', 'Pain', 'Itchiness'],
+        otherSymptoms: "Red Skin, Pain, Itchiness",
         disease: 'Eczema',
         treatment: 'Topical corticosteroids, moisturizers',
         medicines: ['Hydrocortisone', 'Tacrolimus'],
@@ -185,6 +211,7 @@ const symptomData = [
     },
     {
         symptoms: ['Painful Rash', 'Blisters', 'Fever'],
+        otherSymptoms: "Painful Rash, Blisters, Fever",
         disease: 'Shingles',
         treatment: 'Antiviral medications and pain relief',
         medicines: ['Acyclovir', 'Gabapentin'],
@@ -192,6 +219,7 @@ const symptomData = [
     },
     {
         symptoms: ['Painful Joints', 'Fever', 'Rash'],
+        otherSymptoms: "Painful Joints, Fever, Rash",
         disease: 'Systemic Lupus Erythematosus (SLE)',
         treatment: 'Immunosuppressive drugs and symptom management',
         medicines: ['Hydroxychloroquine', 'Prednisone'],
@@ -199,6 +227,7 @@ const symptomData = [
     },
     {
         symptoms: ['Difficulty Breathing', 'Swelling', 'Itchiness'],
+        otherSymptoms: "Difficulty Breathing, Swelling, Itchiness",
         disease: 'Anaphylaxis',
         treatment: 'Emergency care with epinephrine',
         medicines: ['Epinephrine', 'Antihistamines'],
