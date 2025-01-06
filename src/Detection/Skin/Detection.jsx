@@ -63,7 +63,7 @@ const SkinDetection = () => {
 
   return (
     <div className="detection">
-      <h1>Teachable Machine Image Model</h1>
+      <h1>Skin Disease Detection</h1>
       <div className="toggler">
         <label>
           <input
