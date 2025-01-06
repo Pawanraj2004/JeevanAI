@@ -113,4 +113,4 @@ The application is deployed on Vercel and can be accessed [here](https://jeevana
 ---
 
 ## 📜 Project Report
-The detailed project report is available [here](#).
+The detailed project report is available [here](https://drive.google.com/file/d/1V6TeNCV2Zuhkh8Sp23Pp-t2ewv27P6Bg/view?usp=drive_link).
