@@ -30,6 +30,9 @@ const Home = () => {
             <strong>Diagnosis Based on Symptoms:</strong> Enter symptoms to get a tailored diagnosis.
           </li>
           <li style={{ marginBottom: '10px' }}>
+            <strong>Interactive Sympom Checker:</strong> To procide knowledge about he parts of human body where the pain is felt.
+          </li>
+          <li style={{ marginBottom: '10px' }}>
             <strong>Interactive Quiz:</strong> To educate about hygenic and healthy medical choices.
           </li>
         </ul>
